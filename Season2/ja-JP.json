@@ -1,0 +1,38 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "コーヒーショップ",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "OrderIntent",
+                  "slots": [],
+                  "samples": [
+                      "コーヒーにします",
+                      "コーヒーをください",
+                      "コーヒー",
+                      "コーヒーがいいな",
+                      "コーヒーをお願いします",
+                      "コーヒーください"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      }
+  }
+}

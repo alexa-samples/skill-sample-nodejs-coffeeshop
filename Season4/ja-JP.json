@@ -1,0 +1,112 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "コーヒーショップ",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "OrderIntent",
+                    "slots": [
+                        {
+                            "name": "menu",
+                            "type": "menu_list"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "いつもの",
+                        "いつもので",
+                        "じゃあいつもの",
+                        "前回と同じの",
+                        "じゃあそれで",
+                        "{amount} 個",
+                        "{amount} 個ください",
+                        "{amount} 杯ください",
+                        "{amount} つお願いします",
+                        "{menu} にします",
+                        "{menu} がいいな",
+                        "{menu} で",
+                        "{menu} ください",
+                        "{menu} をお願いします",
+                        "{menu} を {amount} つ注文して",
+                        "{menu} {amount} つ",
+                        "{menu} を {amount} つお願いします",
+                        "{menu} を {amount} つください"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RecommendIntent",
+                    "slots": [],
+                    "samples": [
+                        "おすすめは",
+                        "おすすめは何",
+                        "今日は何がおすすめ",
+                        "今日のおすすめは何"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "menu_list",
+                    "values": [
+                        {
+                            "id": "004",
+                            "name": {
+                                "value": "エスプレッソ"
+                            }
+                        },
+                        {
+                            "id": "003",
+                            "name": {
+                                "value": "カプチーノ",
+                                "synonyms": [
+                                    "カップチーノ"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "002",
+                            "name": {
+                                "value": "カフェラテ",
+                                "synonyms": [
+                                    "カフェオレ",
+                                    "カフェオレ"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "001",
+                            "name": {
+                                "value": "ホットコーヒー",
+                                "synonyms": [
+                                    "ブレンド",
+                                    "コーヒー",
+                                    "温かいコーヒー",
+                                    "あったかいコーヒー"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
