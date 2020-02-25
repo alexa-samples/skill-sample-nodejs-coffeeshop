@@ -54,7 +54,7 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 [![](./instructions/S3_guidance.jpg)](https://www.youtube.com/watch?v=uO3CWILZA0c&list=PLan9XPu5-9zwvLFiCZngEgL5Ba0n83gb8)
 
 #### シーズン3で完成するスキルのビルド方法
-1. Alexa開発コンソールの「ビルド」タプの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season3](./Season3)フォルダーの[ja-JP.json](./Season3/ja-JP.json)ファイルの中身を全てコピーします。
+1. Alexa開発コンソールの「ビルド」タブの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season3](./Season3)フォルダーの[ja-JP.json](./Season3/ja-JP.json)ファイルの中身を全てコピーします。
 2. JSONコードを保存し、対話モデルをビルドします。
 3. Alexa開発コンソールの「コードエディタ」タプの画面を開き、GitHubの [Season3](./Season3)フォルダーの[index.js](./Season3/index.js)ファイルの中身を全てコピーします。
 4. JavaScriptコードを保存&デプロイします。
