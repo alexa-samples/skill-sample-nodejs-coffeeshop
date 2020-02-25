@@ -12,7 +12,7 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 このシーズンでは、Alexa開発者コンソールが提供するHello Worldスキルのテンプレートを使用します。
 ビデオの手順通りに進めていくと、お手持ちのAlexa搭載デバイスでHello World スキルをテストすることができるようになります。コーヒーショップスキルを作り始める前に、Alexaスキル開発に必要なアカウントやツールへのアクセス方法を学びます。まずはここから始めることをお勧めします。
 
-[![](./instructions/S1_guidance.jpg)](https://www.youtube.com/embed/uny1qrm7Hx8)
+[![](./instructions/S1_guidance.jpg)](https://www.youtube.com/playlist?list=PLan9XPu5-9zzR7dDKOO_bdrMT5ppbjm1S)
 
 #### 参考リソース
 
