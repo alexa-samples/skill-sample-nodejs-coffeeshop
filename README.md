@@ -31,11 +31,11 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 [![](./instructions/S2_guidance.jpg)](https://www.youtube.com/watch?v=9BaBTmwqRcU&list=PLan9XPu5-9zx-p7tJrjPAlMFvyELIck6t)
 
 #### シーズン2で完成するスキルのビルド方法
-1. Alexa開発コンソールの「ビルド」タプの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season2](./Season2)フォルダーの[ja-JP.json](./Season2/ja-JP.json)ファイルの中身を全てコピーします。
+1. Alexa開発コンソールの「ビルド」タブの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season2](./Season2)フォルダーの[ja-JP.json](./Season2/ja-JP.json)ファイルの中身を全てコピーします。
 2. JSONコードを保存し、対話モデルをビルドします。
-3. Alexa開発コンソールの「コードエディタ」タプの画面を開き、GitHubの [Season2](./Season2)フォルダーの[index.js](./Season2/index.js)ファイルの中身を全てコピーします。
+3. Alexa開発コンソールの「コードエディタ」タブの画面を開き、GitHubの [Season2](./Season2)フォルダーの[index.js](./Season2/index.js)ファイルの中身を全てコピーします。
 4. JavaScriptコードを保存&デプロイします。
-5. Alexa開発コンソールの「テスト」タプをクリックし、Alexaシミュレーターで動作を確認します。
+5. Alexa開発コンソールの「テスト」タブをクリックし、Alexaシミュレーターで動作を確認します。
 
 #### 参考リソース
 
@@ -56,9 +56,9 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 #### シーズン3で完成するスキルのビルド方法
 1. Alexa開発コンソールの「ビルド」タブの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season3](./Season3)フォルダーの[ja-JP.json](./Season3/ja-JP.json)ファイルの中身を全てコピーします。
 2. JSONコードを保存し、対話モデルをビルドします。
-3. Alexa開発コンソールの「コードエディタ」タプの画面を開き、GitHubの [Season3](./Season3)フォルダーの[index.js](./Season3/index.js)ファイルの中身を全てコピーします。
+3. Alexa開発コンソールの「コードエディタ」タブの画面を開き、GitHubの [Season3](./Season3)フォルダーの[index.js](./Season3/index.js)ファイルの中身を全てコピーします。
 4. JavaScriptコードを保存&デプロイします。
-5. Alexa開発コンソールの「テスト」タプをクリックし、Alexaシミュレーターで動作を確認します。
+5. Alexa開発コンソールの「テスト」タブをクリックし、Alexaシミュレーターで動作を確認します。
 
 #### 参考リソース
 
@@ -79,9 +79,9 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 [![](./instructions/S3_guidance.jpg)](https://www.youtube.com/watch?v=uO3CWILZA0c&list=PLan9XPu5-9zwvLFiCZngEgL5Ba0n83gb8)
 
 #### シーズン4で完成するスキルのビルド方法
-1. Alexa開発コンソールの「ビルド」タプの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season4](./Season4)フォルダーの[ja-JP.json](./Season4/ja-JP.json)ファイルの中身を全てコピーします。
+1. Alexa開発コンソールの「ビルド」タブの画面を開き、左側パネルからJSONエディターを開き、コードエディター部にGitHubの [Season4](./Season4)フォルダーの[ja-JP.json](./Season4/ja-JP.json)ファイルの中身を全てコピーします。
 2. JSONコードを保存し、対話モデルをビルドします。
-3. Alexa開発コンソールの「コードエディタ」タプの画面を開き、GitHubの [Season4](./Season4)フォルダーの[index.js](./Season4/index.js)ファイルの中身を全てコピーし保存します。
+3. Alexa開発コンソールの「コードエディタ」タブの画面を開き、GitHubの [Season4](./Season4)フォルダーの[index.js](./Season4/index.js)ファイルの中身を全てコピーし保存します。
 4. さらに、 [Season4](./Season4)フォルダーの[package.json](./Season4/package.json)ファイルの中身を全てコピーし、コードエディタの左パネルにあるpackage.jsonの中身を置き換えて保存します。または、以下のようにオリジナルのpackage.jsonを編集して、` "dependencies"`のグループに`"ask-sdk-s3-persistence-adapter": "^2.0.0"` のエントリーを追加しても構いません。
 
 ```package.json
@@ -94,7 +94,7 @@ Alexaスキル開発の基礎から学べるセルフラーニングのビデオ
 ```
 
 5. 全てのコードの編集が終わったらコードを保存&デプロイします。
-6. Alexa開発コンソールの「テスト」タプをクリックし、Alexaシミュレーターで動作を確認します。
+6. Alexa開発コンソールの「テスト」タブをクリックし、Alexaシミュレーターで動作を確認します。
 
 - 永続アトリビュートに保存された情報をリセットし初期状態に戻したい場合は、S3に保存されている下の図のファイルを削除してください。ファイル名=ユーザーIDとなっています。異なるユーザーでテストした場合は、テストしたユーザーの数だけファイルが生成されますので注意してください。
 
