@@ -10,15 +10,18 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     async handle(handlerInput) {
-        
+
         const attributesManager = handlerInput.attributesManager;
         const lastOrder = await attributesManager.getPersistentAttributes() || {};
         console.log('lastOrder is: ', lastOrder);
 
-        const menu = lastOrder.hasOwnProperty('menu')? lastOrder.menu : undefined;
-        const amount = lastOrder.hasOwnProperty('amount')? lastOrder.amount : undefined;
+        const menu = lastOrder.hasOwnProperty('menu') ? lastOrder.menu : undefined;
+        const amount = lastOrder.hasOwnProperty('amount') ? lastOrder.amount : undefined;
 
-        const speakOutput = `コーヒーショップへようこそ。前回は${menu}を${amount}つでしたね？今日は何にしますか？`;
+        let speakOutput = 'コーヒーショップへようこそ。今日は何にしますか？';
+        if (menu && amount) {
+            speakOutput = `コーヒーショップへようこそ。前回は${menu}を${amount}つでしたね？今日は何にしますか？`;
+        }
         const reprompt = '今日は何にしますか？';
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -32,34 +35,34 @@ const OrderIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'OrderIntent';
     },
     async handle(handlerInput) {
-        
+
         const attributesManager = handlerInput.attributesManager;
-        
+
         const attributes = handlerInput.attributesManager.getSessionAttributes();
         const slots = handlerInput.requestEnvelope.request.intent.slots;
-        
+
         let lastOrder = await attributesManager.getPersistentAttributes() || {};
         console.log('lastOrder is: ', lastOrder);
-        
-        const menuS3 = lastOrder.hasOwnProperty('menu')? lastOrder.menu : undefined;
-        const amountS3 = lastOrder.hasOwnProperty('amount')? lastOrder.amount : undefined;
-        
+
+        const menuS3 = lastOrder.hasOwnProperty('menu') ? lastOrder.menu : undefined;
+        const amountS3 = lastOrder.hasOwnProperty('amount') ? lastOrder.amount : undefined;
+
         let menu = slots.menu.value || attributes.menu || menuS3;
         let amount = slots.amount.value || attributes.amount || amountS3;
-        
+
         /*
         if(slots.menu.resolutions.resolutionsPerAuthority[0].status.code === 'ER_SUCCESS_MATCH'){
             menu = slot.menu.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         }
         */
-        
+
         /*
         if(slots.menu.resolutions.resolutionsPerAuthority[0].status.code === 'ER_SUCCESS_MATCH'){
             menu = slot.menu.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         }
         */
-        
-        if(menu === undefined){
+
+        if (menu === undefined) {
             attributes.amount = amount;
             handlerInput.attributesManager.setSessionAttributes(attributes);
             const speechOutput = '何を注文しますか？';
@@ -69,8 +72,8 @@ const OrderIntentHandler = {
                 .reprompt(reprompt)
                 .getResponse();
         }
-        
-        if(menu !== undefined && amount === undefined){
+
+        if (menu !== undefined && amount === undefined) {
             attributes.menu = menu;
             handlerInput.attributesManager.setSessionAttributes(attributes);
             const speechOutput = 'おいくつ注文しますか？';
@@ -80,11 +83,11 @@ const OrderIntentHandler = {
                 .reprompt(reprompt)
                 .getResponse();
         }
-        
-        lastOrder = {"menu":menu, "amount":amount};
+
+        lastOrder = { "menu": menu, "amount": amount };
         attributesManager.setPersistentAttributes(lastOrder);
         await attributesManager.savePersistentAttributes();
-        
+
         const speechOutput = `${menu}を${amount}つですね。ありがとうございます。`;
         return handlerInput.responseBuilder
             .speak(speechOutput)
@@ -161,6 +164,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         ErrorHandler,
     )
     .withPersistenceAdapter(
-        new persistenceAdapter.S3PersistenceAdapter({bucketName:process.env.S3_PERSISTENCE_BUCKET})
+        new persistenceAdapter.S3PersistenceAdapter({ bucketName: process.env.S3_PERSISTENCE_BUCKET })
     )
     .lambda();
