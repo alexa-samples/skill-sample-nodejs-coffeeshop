@@ -1,5 +1,8 @@
 # Alexaスキル「コーヒーショップ」
 
+# ** このリポジトリはアーカイブされています **
+このリポジトリは、ポイントインタイムリファレンスとして引き続き利用できますが、それ以上の更新やサポートは優先されません。
+
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
 日本向けのAlexaスキル開発の学習教材「Alexa道場」で作成しているサンプルコード「コーヒーショップ」のソースコードを提供するためのリポジトリです。
